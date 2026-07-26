@@ -1,0 +1,102 @@
+Car Rental Portal - Run Instructions
+
+1. Prerequisites
+-----------------
+- Install XAMPP on Windows: https://www.apachefriends.org/download.html
+- Run XAMPP Control Panel
+- Start:
+  * Apache
+  * MySQL
+
+2. Project Folder Location
+---------------------------
+- Copy the project folder into XAMPP web root.
+- The correct path should be:
+  C:\xampp\htdocs\carrental
+
+- After copying, verify the folder structure:
+  C:\xampp\htdocs\carrental\index.php
+  C:\xampp\htdocs\carrental\admin\index.php
+  C:\xampp\htdocs\carrental\includes\config.php
+  C:\xampp\htdocs\carrental\SQL File\carrental.sql
+
+Important: Do not leave an extra nested folder like C:\xampp\htdocs\carrental\carrental.
+If the project is nested too deep, move the inner carrental folder contents one level up.
+
+3. Database Setup
+-------------------
+- Open browser and go to:
+  http://localhost/phpmyadmin
+
+- Create a new database named:
+  carrental
+
+- Click the new database 'carrental', then click the Import tab.
+- Choose the SQL file from the project:
+  C:\xampp\htdocs\carrental\SQL File\carrental.sql
+- Click Go to import.
+
+4. Verify Database Connection
+------------------------------
+- The project uses default local database credentials in:
+  C:\xampp\htdocs\carrental\includes\config.php
+  C:\xampp\htdocs\carrental\admin\includes\config.php
+
+- These values should be:
+  DB_HOST = localhost
+  DB_USER = root
+  DB_PASS = (empty)
+  DB_NAME = carrental
+
+If XAMPP MySQL uses a different password, update both config files accordingly.
+
+5. Run the Website
+-------------------
+- Open in browser:
+  http://localhost/carrental
+
+- If the home page loads, the application is working.
+- If you see a folder list, it means the project folder is in the wrong place.
+
+6. Login Credentials
+---------------------
+User login:
+- Email: test@gmail.com
+- Password: Test@123
+
+Admin login:
+- URL: http://localhost/carrental/admin
+- Username: admin
+- Password: Test@12345
+
+7. Common Fixes
+----------------
+- If admin page does not open, open:
+  http://localhost/carrental/admin/index.php
+
+- If the page shows folders instead of the site, move the project folder so the correct path is:
+  C:\xampp\htdocs\carrental
+
+- If the database import fails, confirm you selected the correct file:
+  SQL File\carrental.sql
+
+8. Customization Notes
+-----------------------
+- To change the header helpline number, edit the database table:
+  tblcontactusinfo -> ContactNo
+
+- To change the site name text, search for "Car Rental Portal" in the project files and replace it with your own name.
+
+9. Extra Notes
+---------------
+- Do not use Apache Tomcat for this project. This is a PHP/MySQL application and only needs Apache + MySQL.
+- Always restart Apache/MySQL from XAMPP if you change config settings or move folders.
+
+10. Useful URLs
+----------------
+- Web root: http://localhost
+- Site: http://localhost/carrental
+- Admin: http://localhost/carrental/admin
+- phpMyAdmin: http://localhost/phpmyadmin
+
+If you give this project to someone else, they should follow these steps in order to run it successfully.
